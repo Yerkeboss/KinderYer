@@ -34,12 +34,6 @@ const blogs = [
 
 function Home() {
     const { t } = useTranslation(); // Use the translation hook
-    const [language, setLanguage] = useState('ru'); // Default is Russian
-  
-    const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
-      setLanguage(lng);
-    };
   return (
     <div className='home-page'>
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
