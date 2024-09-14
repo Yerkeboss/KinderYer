@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
@@ -8,6 +7,9 @@ import { Card } from 'react-bootstrap';
 import Blog1Img from '../../utils/images/blog1-img.jpg';
 import Blog2Img from '../../utils/images/blog2-img.jpg';
 import Blog3Img from '../../utils/images/blog3-img.jpg';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../i18n'; 
+import React, { useState } from 'react';
 
 const blogs = [
     {
@@ -31,12 +33,18 @@ const blogs = [
 ];
 
 function Home() {
+    const { t } = useTranslation(); // Use the translation hook
+    const [language, setLanguage] = useState('ru'); // Default is Russian
+  
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+      setLanguage(lng);
+    };
   return (
     <div className='home-page'>
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
-                <h2>Welcome To</h2>
-                <h1 className='text-center fw-semibold'>React University London</h1>
+                <h2>{t('welcome1')}</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center'>
                     <Link to="/courses">

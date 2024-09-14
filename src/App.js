@@ -8,8 +8,19 @@ import Courses from './pages/Courses/Courses';
 import About from './pages/About/About';
 import Blog from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
+import { useTranslation } from 'react-i18next';
+import i18n from './i18n'; // Import i18next configuration
+import React, { useState } from 'react';
 
 function App() {
+  const { t } = useTranslation(); // Use the translation hook
+  const [language, setLanguage] = useState('ru'); // Default is Russian
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setLanguage(lng);
+  };
+
   return (
     <div>
       <Navbar expand="lg" className='position-absolute w-100'>
@@ -21,23 +32,27 @@ function App() {
                 <path d="M6 2v.341C3.67 3.165 2 5.388 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8a6.002 6.002 0 0 0-4-5.659V2a2 2 0 1 0-4 0m2-1a1 1 0 0 1 1 1v.083a6.04 6.04 0 0 0-2 0V2a1 1 0 0 1 1-1m0 3a4 4 0 0 1 3.96 3.43.5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14A4 4 0 0 1 8 4M4.5 9h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5"/>
               </svg>
               <span className='mx-2 text-light lh-1 fw-semibold'>
-                React
+               ЕрСәнЖәнАй
                 <br></br>
-                University
+                Балабақшасы
                 <br></br>
-                London
               </span>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' className='bg-light' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto justify-content-end w-100'>
-              <Nav.Link href='/' className='text-uppercase'>Home</Nav.Link>
-              <Nav.Link href='/courses' className='text-uppercase'>Our courses</Nav.Link>
-              <Nav.Link href='/about' className='text-uppercase'>About us</Nav.Link>
-              <Nav.Link href='/blog' className='text-uppercase'>Blog</Nav.Link>
-              <Nav.Link href='/contact' className='text-uppercase'>Get in touch</Nav.Link>
+              <Nav.Link href='/' className='text-uppercase'>{t('home')}</Nav.Link>
+              <Nav.Link href='/courses' className='text-uppercase'>{t('courses')}</Nav.Link>
+              <Nav.Link href='/about' className='text-uppercase'>{t('about')}</Nav.Link>
+              <Nav.Link href='/blog' className='text-uppercase'>{t('blog')}</Nav.Link>
+              <Nav.Link href='/contact' className='text-uppercase'>{t('contact')}</Nav.Link>
             </Nav>
+            {/* Language Buttons */}
+            <div style = {{display:'flex', justifyContent:'space-between'}}>
+              <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('ru')} className={language === 'ru' ? 'btn btn-primary' : 'btn btn-outline-primary'}>RU</button>
+              <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('kz')} className={language === 'kz' ? 'btn btn-primary' : 'btn btn-outline-primary'}>KZ</button>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -55,7 +70,7 @@ function App() {
           <div className='row d-flex justify-content-between align-items-center'>
             <div className='col-md-4'>
               <Link to="/contact">
-                <button type='button' className='btn btn-outline-danger btn-lg mb-5 mb-md-4'>Get In Touch</button>
+                <button type='button' className='btn btn-outline-danger btn-lg mb-5 mb-md-4'>{t('contact')}</button>
               </Link>
               <ul className='footer-social-icons list-unstyled d-flex justify-content-between'>
                 <Link to="/contact">
@@ -93,42 +108,37 @@ function App() {
                 <div className='col-12 col-md-6 col-lg-5 mb-5 mt-4 my-md-0'>
                   <ul className='footer-navigation list-unstyled mb-0'>
                     <Link to="/" className='text-decoration-none text-danger'>
-                      <li className='text-uppercase fw-semibold'>Home</li>
+                      <li className='text-uppercase fw-semibold'>{t('home')}</li>
                     </Link>
                     <Link to="/courses" className='text-decoration-none text-danger'>
-                      <li className='text-uppercase fw-semibold'>Our courses</li>
+                      <li className='text-uppercase fw-semibold'>{t('courses')}</li>
                     </Link>
                     <Link to="/about" className='text-decoration-none text-danger'>
-                      <li className='text-uppercase fw-semibold'>About us</li>
+                      <li className='text-uppercase fw-semibold'>{t('about')}</li>
                     </Link>
                     <Link to="/blog" className='text-decoration-none text-danger'>
-                      <li className='text-uppercase fw-semibold'>Blog</li>
+                      <li className='text-uppercase fw-semibold'>{t('blog')}</li>
                     </Link>
                     <Link to="/contact" className='text-decoration-none text-danger'>
-                      <li className='text-uppercase fw-semibold'>Get In Touch</li>
+                      <li className='text-uppercase fw-semibold'>{t('contact')}</li>
                     </Link>
                   </ul>
                 </div>
                 <div className='col-12 col-md-6 col-lg-7'>
                   <ul className='list-unstyled mb-0'>
                     <li>
-                      <p>Main Address - 47 Street Name, London UK</p>
+                      <p>{t('address')}</p>
                     </li>
                     <li>
-                      <p>Phone Number - 0900800700</p>
+                      <p>Телефон: +7 707 540 53 04</p>
                     </li>
                     <li>
-                      <p>Email - react@university.co.uk</p>
+                      <p>Email: zh.yerkegaly@gmail.com</p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className='bg-body-tertiary'>
-          <div className='container'>
-            <p className='p-3 m-0 text-center'>copyright @ made by Ionut Cora</p>
           </div>
         </div>
       </footer>
