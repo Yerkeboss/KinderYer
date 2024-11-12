@@ -2,7 +2,7 @@
     "home": "Home",
     "courses": "For parents",
     "about": "About Us",
-    "blog": "News",
+    "blog": "Gallery",
     "contact": "Contacts",
     "address": "Address: Zhambyl region, Baizak district, Myrzatai village",
     "welcome1":"Welcome to Ersan-Zhanai!",
@@ -21,6 +21,9 @@
     "item5": "Educators and developmental activities",
     "item5-descr":"Our staff are qualified specialists with extensive experience and care for each child. We offer programs that help develop children's creative, intellectual and physical abilities.",
     "item6": "Professional medical support",
-    "item6-descr":"Our kindergarten conducts regular medical examinations of children, and children are constantly monitored by qualified medical workers. We pay close attention to the health of children and create a safe environment for them."
+    "item6-descr":"Our kindergarten conducts regular medical examinations of children, and children are constantly monitored by qualified medical workers. We pay close attention to the health of children and create a safe environment for them.",
+    "course-home":"Our Education System",
+    "course-home-info":"You entrust us with your most precious treasure – your child. We create all the conditions for their harmonious growth and potential to flourish. Our kindergarten offers a psychologically comfortable environment, where each child is given attention. Caring for the younger ones and respecting the elders are our core values.",
+    "course-info-btn":"Learn more"
   }
   

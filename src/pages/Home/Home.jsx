@@ -1,7 +1,7 @@
 import './Home.css';
 import { Link } from 'react-router-dom';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
-import StartCoursesImg from '../../utils/images/start-courses-img.jpg';
+import CourseInfo from '../../utils/images/courses1.jpg';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 import { Card } from 'react-bootstrap';
 import Blog1Img from '../../utils/images/blog1-img.jpg';
@@ -58,16 +58,16 @@ function Home() {
 
         <div className='py-5 bg-light'>
             <div className="container">
-                <div className='row d-flex align-items-center justify-content-around'>
+                <div className='row d-flex align-items-center justify-content' style = {{justifyContent:'space-between', marginLeft:'2rem'}}>
                     <div className='col-lg-5'>
-                        <h2 className='text-capitalize'>2024 start courses</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, placeat.</p>
+                        <h2 style = {{fontWeight:'bolder'}}className='text-capitalize'>{t('course-home')}</h2>
+                        <p style = {{marginTop:'1rem'}}>{t('course-home-info')}</p>
                         <Link to="/courses">
-                            <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
+                            <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-3'>{t('course-info-btn')}</button>
                         </Link>
                     </div>
                     <div className='col-lg-5 mt-5 mt-lg-0'>
-                        <img src={StartCoursesImg} className='img-fluid' alt="" />
+                        <img src={CourseInfo} style= {{borderRadius:'50%', height:'30rem', width:'30rem'}} alt="" />
                     </div>
                 </div>
             </div>
