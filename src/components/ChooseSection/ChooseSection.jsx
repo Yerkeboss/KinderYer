@@ -13,7 +13,6 @@ function ChooseSection() {
         { title: `${t('item1')}`, icon: 'trophy', text: `${t('item1-descr')}` },
         { title: `${t('item2')}`, icon: 'emoji-smile', text: `${t('item2-descr')}` },
         { title: `${t('item3')}`, icon: 'geo-alt', text: `${t('item3-descr')}` },
-        { title: `${t('item4')}`, icon: 'award', text:  `${t('item4-descr')}` },
         { title: `${t('item4')}`, icon: 'camera-security', text: `${t('item4-descr')}` },
         { title: `${t('item5')}`, icon: 'professionals', text: `${t('item5-descr')}` },
         { title: `${t('item6')}`, icon: 'medicine', text: `${t('item6-descr')}` }
