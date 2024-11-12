@@ -1,5 +1,5 @@
 .home-page header {
-    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/main-photo.JPG);
+    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/main-photo.jpg);
     min-height: 35rem;
 }
 
