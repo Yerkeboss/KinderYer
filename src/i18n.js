@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationRU from './locales/ru/translation.json';
 import translationKZ from './locales/kz/translation.json';
+import translationEN from './locales/en/translation.json';
 
 const resources = {
   ru: {
@@ -11,6 +12,9 @@ const resources = {
   },
   kz: {
     translation: translationKZ
+  },
+  en: {
+    translation: translationEN
   }
 };
 
@@ -19,8 +23,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'ru', // Default language
-    fallbackLng: 'ru',
+    lng: 'kz', // Default language
+    fallbackLng: 'kz',
     interpolation: {
       escapeValue: false
     }

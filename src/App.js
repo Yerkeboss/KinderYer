@@ -11,10 +11,11 @@ import Contact from './pages/Contact/Contact';
 import { useTranslation } from 'react-i18next';
 import i18n from './i18n'; // Import i18next configuration
 import React, { useState } from 'react';
+import logo2 from '../src/utils/images/logo2.png';
 
 function App() {
   const { t } = useTranslation(); // Use the translation hook
-  const [language, setLanguage] = useState('ru'); // Default is Russian
+  const [language, setLanguage] = useState('kz'); // Default is Russian
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -27,12 +28,13 @@ function App() {
         <Container>
           <Navbar.Brand>
             <Link to="/" className='navbar-brand d-flex align-items-center'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#dc3545" class="bi bi-backpack-fill" viewBox="0 0 16 16">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#dc3545" class="bi bi-backpack-fill" viewBox="0 0 16 16">
                 <path d="M5 13v-3h4v.5a.5.5 0 0 0 1 0V10h1v3z"/>
                 <path d="M6 2v.341C3.67 3.165 2 5.388 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8a6.002 6.002 0 0 0-4-5.659V2a2 2 0 1 0-4 0m2-1a1 1 0 0 1 1 1v.083a6.04 6.04 0 0 0-2 0V2a1 1 0 0 1 1-1m0 3a4 4 0 0 1 3.96 3.43.5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14A4 4 0 0 1 8 4M4.5 9h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5"/>
-              </svg>
+              </svg> */}
+              <img style = {{width:'3rem', height:'3rem', borderRadius:'50%'}} src = {logo2}/>
               <span className='mx-2 text-light lh-1 fw-semibold'>
-               ЕрСәнЖәнАй
+               Ерсән-Жәнай
                 <br></br>
                 Балабақшасы
                 <br></br>
@@ -50,8 +52,9 @@ function App() {
             </Nav>
             {/* Language Buttons */}
             <div style = {{display:'flex', justifyContent:'space-between'}}>
-              <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('ru')} className={language === 'ru' ? 'btn btn-primary' : 'btn btn-outline-primary'}>RU</button>
               <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('kz')} className={language === 'kz' ? 'btn btn-primary' : 'btn btn-outline-primary'}>KZ</button>
+              <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('ru')} className={language === 'ru' ? 'btn btn-primary' : 'btn btn-outline-primary'}>RU</button>
+              <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('en')} className={language === 'en' ? 'btn btn-primary' : 'btn btn-outline-primary'}>EN</button>
             </div>
           </Navbar.Collapse>
         </Container>
