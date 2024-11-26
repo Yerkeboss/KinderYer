@@ -17,3 +17,10 @@ header {
 .welcome2 {
     margin-top:'2rem' !important
 }
+
+.home-course-header {
+    border-radius: 50%;
+    height: 20rem;
+    max-width: calc(100% - 0.5rem);
+    width: 20rem;
+}
