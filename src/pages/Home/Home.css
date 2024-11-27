@@ -24,3 +24,9 @@ header {
     max-width: calc(100% - 0.5rem);
     width: 20rem;
 }
+
+.blog-header-img {
+    height: 20rem;
+    object-position: top;
+    object-fit:cover;
+}
