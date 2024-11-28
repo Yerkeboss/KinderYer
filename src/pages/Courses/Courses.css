@@ -1,5 +1,5 @@
 .courses-page header {
-    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/courses-page-header.jpg);
+    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/album6.jpg);
 }
 
 .courses-page .card-img-overlay {
@@ -8,4 +8,10 @@
 
 .courses-page .card:hover {
     cursor: pointer;
+}
+
+.coursesImage {
+    height: 20rem;
+    object-position: center;
+    object-fit:cover;
 }

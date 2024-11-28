@@ -37,11 +37,11 @@ function Home() {
         <div className='home-page'>
             <header className='h-100 d-flex align-items-center text-light'>
                 <div className='container d-flex flex-column align-items-center' style={{ marginTop: '4rem' }}>
-                    <h2>{t('welcome1')}</h2>
+                    <h2 className='home-title'>{t('welcome1')}</h2>
                     <br />
-                    <p>{t('welcome2')}</p>
+                    <p style={{textAlign:'justify'}}>{t('welcome2')}</p>
                     <br />
-                    <div className='d-flex flex-column flex-sm-row align-items-center'>
+                    <div className='welcome-container d-flex flex-column flex-sm-row align-items-center'>
                         <Link to="/courses">
                             <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'> {t('subjects')}</button>
                         </Link>
@@ -88,7 +88,7 @@ function Home() {
                         {blogs.map((blog) => (
                             <div key={blog.id} className='col-md-6 col-lg-4'>
                                 <Link to="/blog" className='text-decoration-none'>
-                                    <Card className='h-100 shadow scale-hover-effect'>
+                                    <Card className='h-100 shadow scale-hover-effect' style={{borderRadius:'2rem'}}>
                                         <Card.Img className="blog-header-img" variant="top" src={blog.img} />
                                         <Card.Body className='p-md-5'>
                                             <Card.Title style={{ fontWeight: 'bolder' }}>{blog.title}</Card.Title>

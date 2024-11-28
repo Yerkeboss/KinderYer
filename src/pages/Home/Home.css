@@ -14,9 +14,14 @@ header {
     background-position: center;
 }
 
+.home-title {
+    margin-top: 0rem;
+    font-weight: bolder;
+}
 .welcome2 {
     margin-top:'2rem' !important
 }
+
 
 .home-course-header {
     border-radius: 50%;
@@ -30,3 +35,14 @@ header {
     object-position: top;
     object-fit:cover;
 }
+
+@media only screen and (max-width: 440px) {
+    .home-title {
+    margin-top: 2rem;
+    }
+
+    .welcome-container {
+        padding-bottom: 1rem;
+    }
+}
+
