@@ -51,7 +51,7 @@ function App() {
               <Nav.Link href='/contact' className='text-uppercase'>{t('contact')}</Nav.Link>
             </Nav>
             {/* Language Buttons */}
-            <div style = {{display:'flex', justifyContent:'space-between'}}>
+            <div style = {{display:'flex', justifyContent:'space-between', marginTop:'2rem', marginBottom:'1rem', marginRight:'1rem'}}>
               <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('kz')} className={language === 'kz' ? 'btn btn-primary' : 'btn btn-outline-primary'}>KZ</button>
               <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('ru')} className={language === 'ru' ? 'btn btn-primary' : 'btn btn-outline-primary'}>RU</button>
               <button style = {{marginLeft:'1rem'}} onClick={() => changeLanguage('en')} className={language === 'en' ? 'btn btn-primary' : 'btn btn-outline-primary'}>EN</button>
