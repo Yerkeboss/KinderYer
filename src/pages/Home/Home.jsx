@@ -37,9 +37,9 @@ function Home() {
         <div className='home-page'>
             <header className='h-100 d-flex align-items-center text-light'>
                 <div className='container d-flex flex-column align-items-center' style={{ marginTop: '4rem' }}>
-                    <h2 className='home-title'>{t('welcome1')}</h2>
+                    <h2 className='home-title' >{t('welcome1')}</h2>
                     <br />
-                    <p style={{textAlign:'justify'}}>{t('welcome2')}</p>
+                    <p style={{marginTop:'2rem', fontWeight:'bold', fontSize:'1.2rem', textAlign:"justify"}}>{t('welcome2')}</p>
                     <br />
                     <div className='welcome-container d-flex flex-column flex-sm-row align-items-center'>
                         <Link to="/courses">

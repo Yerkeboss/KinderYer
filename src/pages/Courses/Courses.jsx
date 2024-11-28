@@ -59,9 +59,9 @@ function Courses() {
         <div className="courses-page">
             <header className="height-75">
                 <div className="container h-100 d-flex flex-column align-items-center justify-content-center text-light">
-                    <h1 className="text-center fw-semibold" >{t('subjects')}</h1>
+                    <h1 className="container1 text-center fw-semibold" >{t('subjects')}</h1>
                     <p className="text-justify w-75 mb-5" style={{marginTop:'2rem', fontWeight:'bold', fontSize:'1.2rem'}}>{t('courses-header')}</p>
-                </div>
+                    </div>
             </header>
 
             <div className="container py-5">
