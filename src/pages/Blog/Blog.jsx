@@ -7,7 +7,10 @@ import Blog2Img from '../../utils/images/alb13.jpg';
 import Blog3Img from '../../utils/images/alb9.jpg';
 import Blog4Img from '../../utils/images/alb10.jpg';
 import Blog5Img from '../../utils/images/alb8.jpg';
-import Blog6Img from '../../utils/images/alb14.jpg';
+import Blog6Img from '../../utils/images/celeb.jpeg';
+import Blog7Img from '../../utils/images/zoo.jpg';
+import Kiz from '../../utils/images/kiz.jpg';
+import Goat from '../../utils/images/zoo1.jpeg';
 import { useTranslation } from 'react-i18next';
 
 
@@ -50,7 +53,25 @@ function Blog() {
             img: [Blog6Img],
             title: `${t('blog6-title')}`,
             description: `${t('blog6-descr')}`
-        }
+        },
+        {
+            id: 7,
+            img: [Blog7Img],
+            title: `${t('blog7-title')}`,
+            description: `${t('blog7-descr')}`
+        },
+        {
+            id: 8,
+            img: [Kiz],
+            title: `${t('blog8-title')}`,
+            description: `${t('blog8-descr')}`
+        },
+        {
+            id: 9,
+            img: [Goat],
+            title: `${t('blog9-title')}`,
+            description: `${t('blog9-descr')}`
+        },
     ];
     return (
         <div className='blog-page'>
