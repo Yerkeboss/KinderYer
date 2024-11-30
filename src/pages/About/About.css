@@ -1,3 +1,37 @@
 .about-page header {
     background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/album2.jpg);
 }
+
+.about-video {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 20%; /* Adjust as needed for responsiveness */
+    max-width: 300px; /* Prevent the video from being too large */
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-player-container {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 15rem;
+    right: 2rem;
+}
+
+.video-wrap {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.close-button {
+    font-size: 1.5rem;
+    display: flex;
+    font-weight: bolder;
+    color:red;
+}

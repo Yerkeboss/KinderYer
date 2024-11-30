@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
 import AboutUsSectionImg from '../../utils/images/alb9.jpg';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 function About() {
 
     const { t } = useTranslation();
+    const [showVideo, setShowVideo] = useState(true);
 
   return (
     <div className='about-page'>
@@ -37,6 +40,19 @@ function About() {
         <div className='bg-dark text-light py-5'>
             <ChooseSection />
         </div>
+        {showVideo && (
+      <div className="video-player-container">
+        <FontAwesomeIcon icon={faX} className="close-button" onClick={() => setShowVideo(false)} />
+        <video autoPlay loop className="video-wrap">
+          <source
+            src="https://firebasestorage.googleapis.com/v0/b/qoqiqaz7.appspot.com/o/About.mp4?alt=media&token=e4c76835-e65b-403c-9b9c-919eedbf7dfd"
+            type="video/mp4"
+            allowFullScreen
+          />
+        </video>
+      </div>
+      )}
+
     </div>
   )
 }
