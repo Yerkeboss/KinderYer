@@ -4,13 +4,20 @@ import { Link } from 'react-router-dom';
 import AboutUsSectionImg from '../../utils/images/alb9.jpg';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import img1 from './1.jpeg';
+import img2 from './2.jpeg';
+import img3 from './3.jpeg';
+import img4 from './4.jpeg';
+import img5 from './5.jpeg';
+import img6 from './6.jpeg';
+import imgDoc from './doc.jpeg';
+
+const seminarPhotos = [img1, img2, img3, img4, img5, img6, imgDoc];
 
 function About() {
 
     const { t } = useTranslation();
-    const [showVideo, setShowVideo] = useState(true);
+    const [lightboxImg, setLightboxImg] = useState(null);
 
   return (
     <div className='about-page'>
@@ -40,18 +47,32 @@ function About() {
         <div className='bg-dark text-light py-5'>
             <ChooseSection />
         </div>
-        {showVideo && (
-      <div className="video-player-container">
-        <FontAwesomeIcon icon={faX} className="close-button" onClick={() => setShowVideo(false)} />
-        <video autoPlay loop className="video-wrap">
-          <source
-            src="https://firebasestorage.googleapis.com/v0/b/qoqiqaz7.appspot.com/o/About.mp4?alt=media&token=e4c76835-e65b-403c-9b9c-919eedbf7dfd"
-            type="video/mp4"
-            allowFullScreen
-          />
-        </video>
-      </div>
-      )}
+
+        <div className='seminar-section container my-5'>
+            <div className='seminar-text-block mb-5'>
+                <p>
+                    Байзақ ауданы білім бөлімінің жұмыс жоспарына сәйкес 2025 жылдың 30 мамыр күні мектеп жасына дейінгі балаларға экологиялық тәрбие беру, қоршаған ортаға сүйіспеншілігін, экологиялық сауаттылығы дағдыларын арттыру мақсатында «ЕCOLAB» жобасы бойынша озат тәжірибені жинақтау және тарату мақсатында мектепке дейінгі ұйым педагогтеріне арналған «Балабақша жағдайында тәрбиеленушілерге экологиялық тәрбие берудің маңызы» тақырыбында ЖШС «Қара-Бура» «Ерсән-Жәнай» жекеменшік бөбекжай-бақшасында аудандық семинар өтті.
+                </p>
+                <p>
+                    Семинарға мектепке дейінгі ұйымнан 35 педагог қатысты. Мақсаты: Балаларға экологиялық тәрбие беру арқылы қоршаған ортаға қамқорлықпен қарау дағдыларын жетілдіреді, табиғат құбылыстарына қызығушылықтарын арттырады. Педагогтар ЖШС «Ерсән-Жәнай» бөбекжай-бақшасының топтарымен және «Гүлдер аллеясы» мен танысты. Сонымен қатар «Зообақ» ашылу салтанаты өтті. ЖШС «Ерсән-Жәнай» бөбекжай-бақшасының әдіскері Рысқұлбекова Қ баяндама оқып, тәрбиешілер Жалғасбаева А, Жумадилдаева Г, Таутаева М, Қалиева Т, Мамытова Б өздерінің іс-тәжірибелерімен бөлісті.
+                </p>
+            </div>
+
+            <div className='seminar-gallery'>
+                {seminarPhotos.map((photo, index) => (
+                    <div key={index} className='seminar-gallery-item' onClick={() => setLightboxImg(photo)}>
+                        <img src={photo} alt={`Семинар ${index + 1}`} className='seminar-gallery-img' />
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {lightboxImg && (
+            <div className='lightbox-overlay' onClick={() => setLightboxImg(null)}>
+                <button className='lightbox-close' onClick={() => setLightboxImg(null)}>&#x2715;</button>
+                <img src={lightboxImg} alt="Үлкейтілген фото" className='lightbox-img' onClick={e => e.stopPropagation()} />
+            </div>
+        )}
 
     </div>
   )
