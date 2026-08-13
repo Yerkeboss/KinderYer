@@ -1,6 +1,5 @@
 .contact-page header {
-    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/contactus.png);
-    object-fit: cover;
+    background-image: linear-gradient(rgba(5, 10, 35, 0.75), rgba(5, 10, 35, 0.75)), url(../../utils/images/album1.jpg);
 }
 
 #contact-form {

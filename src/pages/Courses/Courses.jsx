@@ -9,12 +9,14 @@ import Choreography from '../../utils/images/choreography.png';
 import Math from '../../utils/images/math.png';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 
 
 
 function Courses() {
 
     const { t } = useTranslation();
+    useSEO(t('subjects'), t('courses-header'));
 
     const courses = [
         {
@@ -69,7 +71,7 @@ function Courses() {
                     {courses.map((course) => (
                         <div key={course.id} className="col-lg-6">
                             <Card className="text-white shadow scale-hover-effect">
-                                <Card.Img className='coursesImage' src={course.img} />
+                                <Card.Img className='coursesImage' src={course.img} alt={t(course.titleKey)} />
                                 <Card.ImgOverlay className="d-flex flex-column align-items-center justify-content-center p-md-5">
                                     <Card.Title className="fs-1 text-danger">{t(course.titleKey)}</Card.Title>
                                     <Card.Text className="text-center">{t(course.descriptionKey)}</Card.Text>

@@ -1,9 +1,11 @@
 import React from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 
 function Contact() {
     const { t } = useTranslation();
+    useSEO(t('contact'), t('contact-meta-description'));
     return (
         <div className='contact-page'>
             <header className='height-75'>
@@ -17,9 +19,9 @@ function Contact() {
             <div className='bg-dark text-light p-5'>
                 <div className='container'>
                     <div className='mt-5'>
-                        <div className='d-flex justify-content-center mt-4'>
+                        <div className='d-flex justify-content-center mt-4 w-100' style={{ maxWidth: '800px', aspectRatio: '4 / 3', margin: '0 auto' }}>
 
-                            <iframe title="Unique Title" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5828.339921110473!2d71.44595854662604!3d43.07992203454041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a7116ad35e0b3d%3A0x3030e6c529776568!2z0JzRi9GA0LfQsNGC0LDQuQ!5e0!3m2!1sru!2skz!4v1732811751683!5m2!1sru!2skz" width="800" height="600"></iframe>
+                            <iframe title="Unique Title" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5828.339921110473!2d71.44595854662604!3d43.07992203454041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a7116ad35e0b3d%3A0x3030e6c529776568!2z0JzRi9GA0LfQsNGC0LDQuQ!5e0!3m2!1sru!2skz!4v1732811751683!5m2!1sru!2skz" width="100%" height="100%" style={{ border: 0 }}></iframe>
                         </div>
                     </div>
 

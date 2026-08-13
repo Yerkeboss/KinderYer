@@ -4,20 +4,21 @@ import { Link } from 'react-router-dom';
 import AboutUsSectionImg from '../../utils/images/alb9.jpg';
 import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import img1 from './1.jpeg';
 import img2 from './2.jpeg';
 import img3 from './3.jpeg';
 import img4 from './4.jpeg';
 import img5 from './5.jpeg';
 import img6 from './6.jpeg';
-import imgDoc from './doc.jpeg';
 
-const seminarPhotos = [img1, img2, img3, img4, img5, img6, imgDoc];
+const seminarPhotos = [img1, img2, img3, img4, img5, img6];
 
 function About() {
 
     const { t } = useTranslation();
     const [lightboxImg, setLightboxImg] = useState(null);
+    useSEO(t('about'), t('aboutus-header'));
 
   return (
     <div className='about-page'>
@@ -39,7 +40,7 @@ function About() {
                     </Link>
                 </div>
                 <div className='col-lg-6 d-flex justify-content-center'>
-                    <img src={AboutUsSectionImg} className='img-fluid w-100' alt="" />
+                    <img src={AboutUsSectionImg} className='img-fluid w-100' alt={t('aboutus-title')} />
                 </div>
             </div>
         </div>
@@ -64,6 +65,12 @@ function About() {
                         <img src={photo} alt={`Семинар ${index + 1}`} className='seminar-gallery-img' />
                     </div>
                 ))}
+            </div>
+
+            <div className='d-flex justify-content-center mt-5'>
+                <Link to="/attestation">
+                    <button type='button' className='btn btn-outline-danger btn-lg'>{t('attestation-link-btn')}</button>
+                </Link>
             </div>
         </div>
 
